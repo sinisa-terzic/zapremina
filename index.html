@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>height of a Sphere</title>
+    <style>
+        /* body {
+            padding-top: 30px;
+        } */
+
+        /* label,
+        input {
+            display: block;
+        } */
+
+        input {
+            margin: 0 0 10px 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 10px;
+            margin: 0;
+        }
+        li {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li><b>V</b> - Zapremina</li>
+        <li><b>r</b> &nbsp;- Poluprečnik</li>
+        <li><b>π</b> &nbsp;- Konstanta Pi, približno 3,14</li>
+        <li><b>h</b> &nbsp;- Visina</li>
+    </ul>
+    <p><b><i>Formula za obračunavanje zapremine valjka je </i>: V = r<sup>2</sup> * π * h</b></p>
+    <!-- <p>Unesite vrednosti:</p> -->
+    <form action="" method="post" id="MyForm">
+        <label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
+        <br>
+        <label for="height">Height</label><input type="text" name="height" id="height" required>
+        <br>
+        <label for="result">Result</label><input type="text" name="result" id="result">
+        <br>
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+</body>
+
+<script>
+    function height_sphere() {
+        var radius = document.getElementById('radius').value;
+        var height = document.getElementById('height').value;
+        radius = Math.abs(radius);
+        height = Math.abs(height);
+        result = Math.pow(radius, 2) * Math.PI * height;
+        result = result.toFixed(2);
+        document.getElementById('result').value = result;
+        return false;
+    }
+    document.getElementById('MyForm').onsubmit = height_sphere;
+</script>
+
+</html>
